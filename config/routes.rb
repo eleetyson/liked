@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  # resources :follows
   # resources :users
+  # resources :follows
+  # resources :likes
 end
