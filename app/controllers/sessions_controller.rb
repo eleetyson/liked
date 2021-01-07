@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
 # GET /auth/twitter/callback
 # logs user in given valid credentials
 # redirects to sign on page if not
+# auth[:credentials][:token] and auth[:credentials][:secret]
   def create
     binding.pry
     # @user = User.find_or_create_by(uid: auth['uid']) do |u|
-    #   u.name = auth['info']['name']
-    #   u.email = auth['info']['email']
-    #   u.password = SecureRandom.hex(10)
+    #   u.name = auth[:info][:name]
+    #   u.handle = auth[:info][:nickname]
     # end
     #
     # session[:user_id] = @user.id
