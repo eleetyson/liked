@@ -5,14 +5,13 @@ class SessionsController < ApplicationController
 # redirects to sign on page if not
 # auth[:credentials][:token] and auth[:credentials][:secret]
   def create
-    binding.pry
-    # @user = User.find_or_create_by(uid: auth['uid']) do |u|
-    #   u.name = auth[:info][:name]
-    #   u.handle = auth[:info][:nickname]
-    # end
-    #
-    # session[:user_id] = @user.id
-    # redirect_to user_path(@user)
+    @user = User.find_or_create_by(uid: auth['uid']) do |u|
+      u.name = auth[:info][:name]
+      u.handle = auth[:info][:nickname]
+    end
+
+    session[:user_id] = @user.id
+    redirect_to user_path(@user)
   end
 
 # POST /logout
@@ -24,7 +23,7 @@ class SessionsController < ApplicationController
 
   private
 
-  # helper method to make parsing omniauth response simpler
+# helper method to make parsing omniauth response simpler
   def auth
     request.env['omniauth.auth']
   end
