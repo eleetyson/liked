@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   def home
   end
 
+  # main page
   def show
-    redirect_to user_path(current_user) if params[:id].to_i != current_user.id
+    redirect_to user_path(current_user) if !authorized?(params[:id])
   end
 
 end
