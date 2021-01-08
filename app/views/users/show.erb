@@ -1,2 +1,5 @@
-<p class="text-center"> <%= current_user.uid %> @<%= current_user.name %> <%= current_user.handle %> </p>
+<p class="text-center"> User <%= current_user.uid %> - <%= current_user.name %> - @<%= current_user.handle %> </p>
+<p class="text-center"> access token: <%= current_user.token %> </p>
+<p class="text-center"> access token secret: <%= current_user.secret %> </p>
+
 <%= link_to "Sign out", logout_path, method: :post %>
