@@ -5,12 +5,6 @@ class SessionsController < ApplicationController
 # finds existing account or creates a new one
 # stores user id in session hash for reference
   def create
-    # user = User.find_or_create_by(uid: auth['uid']) do |u|
-    #   u.name = auth[:info][:name]
-    #   u.handle = auth[:info][:nickname]
-    #   u.token = auth[:credentials][:token]
-    #   u.secret = auth[:credentials][:secret]
-    # end
     user = User.from_omniauth(auth)
     session[:user_id] = user.id
     redirect_to user_path(user)
