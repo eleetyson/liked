@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
 
 # GET /auth/twitter/callback
-# logs user on
-# finds existing account or creates a new one
-# stores user id in session hash for reference
+# logs user on by finding existing account or creating a new one
+# stores user information in session hash for reference
+# redirects to users#show
   def create
     user = User.from_omniauth(auth)
     session[:user_id] = user.id
+    session[:token] = user.token
+    session[:secret] = user.secret
     redirect_to user_path(user)
   end
 
@@ -19,7 +21,7 @@ class SessionsController < ApplicationController
 
   private
 
-  # helper method to make parsing omniauth response simpler
+  # helper method to simplify parsing omniauth response
   def auth
     request.env['omniauth.auth']
   end

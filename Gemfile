@@ -25,6 +25,7 @@ gem 'pry-byebug'
 gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'twitter'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

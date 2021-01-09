@@ -24,4 +24,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_path unless logged_in?
   end
 
+  # configures a client for simpler access to the Twitter API
+  def client
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['TWITTER_API_KEY']
+      config.consumer_secret     = ENV['TWITTER_API_SECRET']
+      config.access_token        = session['token']
+      config.access_token_secret = session['secret']
+    end
+  end
+
 end
