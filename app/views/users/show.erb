@@ -2,4 +2,7 @@
 <p class="text-center"> access token: <%= current_user.token %> </p>
 <p class="text-center"> access token secret: <%= current_user.secret %> </p>
 
+<%= raw(@embedded_tweet.html) %>
+<br>
+
 <%= link_to "Sign out", logout_path, method: :post %>
