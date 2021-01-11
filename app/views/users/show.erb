@@ -1,7 +1,8 @@
 <p class="text-center"> User <%= current_user.uid %> - <%= current_user.name %> - @<%= current_user.handle %> </p>
 <p class="text-center"> access token: <%= current_user.token %> </p>
-<p class="text-center"> access token secret: <%= current_user.secret %> </p>
+<p class="text-center"> access token secret: <%= current_user.secret %> </p><br>
 
+Liked by <a href="https://twitter.com/<%=@follow.handle%>" target="_blank"><%= @follow.name %></a>
 <%= raw(@embedded_tweet.html) %>
 <br>
 

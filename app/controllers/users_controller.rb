@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     like = @follow.get_random_like(client)
     @like = Like.create(tid: like.attrs[:id_str], follow_id: @follow.id)
-    @embedded_tweet = client.oembed(@like.get_tid_int)
+    @embedded_tweet = client.oembed(@like.get_tid_int, options = {maxwidth: 400})
   end
 
 end
