@@ -19,6 +19,31 @@ a:visited {
   color: rgba(29, 161, 242, 1);
 }
 
-a:hover {
-  text-decoration: underline;
+button.login {
+  background-color: rgba(29, 161, 242, 1);
+  color: white;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  display: flex;
+  cursor: pointer;
+  transition: 0.05s linear;
+}
+
+button.login > span.login-text {
+  margin-left: 20px;
+  padding-bottom: 3px;
+  font-weight: 600;
+}
+
+button.login:hover {
+  background-color: rgba(29, 161, 242, 0.95);
+}
+
+button.login:active {
+  transform: scale(0.995);
+}
+
+button.login:focus {
+  outline: none;
 }

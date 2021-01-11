@@ -1,5 +1,11 @@
-<div class="bg-green-800 w-1/1 mx-8 p-4">
-<p class="text-white text-center">hey</p>
-</div>
+<div class="w-full h-96 flex flex-col justify-center items-center">
+  
+  <%= button_to "/auth/twitter", method: :get, class: "login" do %>
+    <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="self-center">
+      <path d="M15.3334 1.99999C14.695 2.4503 13.9882 2.79473 13.2401 3.01999C12.8386 2.55833 12.305 2.23111 11.7114 2.0826C11.1179 1.93409 10.4931 1.97145 9.92147 2.18962C9.34986 2.40779 8.85904 2.79625 8.5154 3.30246C8.17176 3.80867 7.99188 4.40821 8.00008 5.01999V5.68665C6.8285 5.71703 5.6676 5.45719 4.62075 4.93028C3.57391 4.40337 2.67363 3.62574 2.00008 2.66665C2.00008 2.66665 -0.666585 8.66665 5.33341 11.3333C3.96043 12.2653 2.32485 12.7326 0.666748 12.6667C6.66675 16 14.0001 12.6667 14.0001 4.99999C13.9995 4.81429 13.9816 4.62905 13.9467 4.44665C14.6271 3.77565 15.1073 2.92846 15.3334 1.99999Z" fill="#fff"></path>
+    </svg>
 
-<%= link_to "Sign on with Twitter", "/auth/twitter" %>
+    <span class="login-text"> Sign on with Twitter</span>
+  <% end %>
+
+</div>
