@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  helper_method :current_user, :logged_in?, :authorized?, :require_login, :require_logout, :client
 
   private
 
@@ -22,6 +22,11 @@ class ApplicationController < ActionController::Base
   # redirects to root if user isn't logged in
   def require_login
     redirect_to root_path unless logged_in?
+  end
+
+  # redirects to user's show page if user is logged in
+  def require_logout
+    redirect_to user_path(current_user) if logged_in?
   end
 
   # configures a client for simpler access to the Twitter API

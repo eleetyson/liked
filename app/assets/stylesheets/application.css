@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+a:link,
+a:visited {
+  color: rgba(29, 161, 242, 1);
+}
+
+a:hover {
+  text-decoration: underline;
+}

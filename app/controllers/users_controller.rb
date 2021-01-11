@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_logout, only: [:home]
   before_action :require_login, only: [:show]
 
   # root route with Twitter sign on button
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
 
     like = @follow.get_random_like(client)
     @like = Like.create(tid: like.attrs[:id_str], follow_id: @follow.id)
-    @embedded_tweet = client.oembed(@like.get_tid_int, options = {maxwidth: 400})
+    @embedded_tweet = client.oembed(@like.get_tid_int, options = {maxwidth: 550})
   end
 
 end

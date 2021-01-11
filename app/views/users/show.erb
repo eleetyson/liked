@@ -1,9 +1,9 @@
-<p class="text-center"> User <%= current_user.uid %> - <%= current_user.name %> - @<%= current_user.handle %> </p>
-<p class="text-center"> access token: <%= current_user.token %> </p>
-<p class="text-center"> access token secret: <%= current_user.secret %> </p><br>
+<div class="w-full flex flex-col justify-center items-center">
+  <p> User <%= current_user.uid %> - <%= current_user.name %> - @<%= current_user.handle %> </p>
+  <p> access token: <%= current_user.token %> </p>
+  <p> access token secret: <%= current_user.secret %> </p>
+  <br><br>
 
-Liked by <a href="https://twitter.com/<%=@follow.handle%>" target="_blank"><%= @follow.name %></a>
-<%= raw(@embedded_tweet.html) %>
-<br>
-
-<%= link_to "Sign out", logout_path, method: :post %>
+  <p class="text-sm">Liked by <a href="https://twitter.com/<%=@follow.handle%>" target="_blank"><%= @follow.name %></a></p>
+  <%= raw(@embedded_tweet.html) %>
+</div>
