@@ -55,9 +55,12 @@ div > a.refresh:hover {
   background-color: rgba(29, 161, 242, 0.95);
 }
 
-button.login:active,
-div > a.refresh:active {
+button.login:active {
   transform: scale(0.995);
+}
+
+div > a.refresh:active {
+  transform: scale(0.99);
 }
 
 button.login:focus,
