@@ -12,7 +12,7 @@ class Follow < ApplicationRecord
 # fetches and cleans an array of an account's recently favorited Tweets
 # returns a randomly selected Tweet from that array, as an object
   def get_random_like(client)
-    likes = client.favorites(self.get_uid_int)
+    likes = client.favorites(self.get_uid_int, options = {count: 5})
     like = likes.sample
   end
 

@@ -10,13 +10,6 @@ class User < ApplicationRecord
     self.uid.to_i
   end
 
-# fetches array of ids for user's Twitter follows and randomly selects one
-# fetches and returns account info for the selected id, as an object
-  def get_random_follow(client)
-    follow_id = client.friend_ids(self.get_uid_int).attrs[:ids].sample
-    follow = client.user(follow_id)
-  end
-
 # finds existing user or creates new user based on Twitter API response
   def self.from_omniauth(auth)
     self.find_or_create_by(uid: auth['uid']) do |u|

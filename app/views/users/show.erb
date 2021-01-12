@@ -1,9 +1,5 @@
 <div class="w-full flex flex-col justify-center items-center">
-  <p> User <%= current_user.uid %> - <%= current_user.name %> - @<%= current_user.handle %> </p>
-  <p> access token: <%= current_user.token %> </p>
-  <p> access token secret: <%= current_user.secret %> </p>
-  <br><br>
-
-  <p class="text-sm">Liked by <a href="https://twitter.com/<%=@follow.handle%>" target="_blank"><%= @follow.name %></a></p>
+  <%= link_to "REFRESH", request.fullpath, class: "mt-4 refresh" %>
   <%= raw(@embedded_tweet.html) %>
+  <p class="text-sm mb-4">Liked by <a href="https://twitter.com/<%=@follow.handle%>" target="_blank"><%= @follow.name %></a></p>
 </div>
