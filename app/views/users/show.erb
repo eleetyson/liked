@@ -1,5 +1,5 @@
 <div class="w-full flex flex-col justify-center items-center">
-  <%= link_to "REFRESH", request.fullpath, class: "mt-4 refresh" %>
+  <p class="text-sm mt-4">Liked by <a href="https://twitter.com/<%=@follow.handle%>" target="_blank"><%= @follow.name %></a></p>
   <%= raw(@embedded_tweet.html) %>
-  <p class="text-sm mb-4">Liked by <a href="https://twitter.com/<%=@follow.handle%>" target="_blank"><%= @follow.name %></a></p>
+  <%= link_to "Refresh", request.fullpath, class: "mt-2 mb-5 refresh" %>
 </div>
